@@ -1,0 +1,99 @@
+<!-- 
+  ██╗██╗     ██╗     ██╗   ██╗███╗   ███╗███████╗██████╗ ██╗██╗  ██╗
+  ██║██║     ██║     ██║   ██║████╗ ████║██╔════╝██╔══██╗██║╚██╗██╔╝
+  ██║██║     ██║     ██║   ██║██╔████╔██║█████╗  ██████╔╝██║ ╚███╔╝ 
+  ██║██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██╗██║ ██╔██╗ 
+  ██║███████╗███████╗╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║██║██╔╝ ██╗
+  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+                                                                    
+  ██████╗ ██╗      █████╗  ██████╗███████╗                          
+  ██╔══██╗██║     ██╔══██╗██╔════╝██╔════╝                          
+  ██████╔╝██║     ███████║██║     █████╗                            
+  ██╔═══╝ ██║     ██╔══██║██║     ██╔══╝                            
+  ██║     ███████╗██║  ██║╚██████╗███████╗   pickle fr fr
+  ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝                          
+  -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="/cloak.js"></script>
+    <script src="/rizz.js?v=100"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="https://ilmrx.neocities.org/images/misc/favicon.png">
+  <body>
+      <img width="400" src="https://ilmrx.neocities.org/images/Logos/Logo%20Coffee.png" id="logo">
+    <!--
+      ███████╗██╗████████╗███████╗███████╗
+      ██╔════╝██║╚══██╔══╝██╔════╝██╔════╝
+      ███████╗██║   ██║   █████╗  ███████╗
+      ╚════██║██║   ██║   ██╔══╝  ╚════██║
+      ███████║██║   ██║   ███████╗███████║
+      ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝
+      -->
+  <input type="text" id="game-search-input" placeholder="Search for a mod">
+<script>
+document.getElementById('game-search-input').addEventListener('input', function(event) {
+  // Get the search query and convert it to lowercase
+  var searchQuery = event.target.value.toLowerCase();
+
+  // Filter the game links based on the search query (ignoring case)
+  var gameLinks = document.getElementsByClassName('link');
+  for (var i = 0; i < gameLinks.length; i++) {
+    var gameTitle = gameLinks[i].innerText.toLowerCase();
+    if (gameTitle.includes(searchQuery)) {
+      gameLinks[i].style.display = 'block'; // Show matching game link
+    } else {
+      gameLinks[i].style.display = 'none'; // Hide non-matching game link
+    }
+  }
+});
+</script>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/0330/index.html')">Friday Night Funkin</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/aflac02/index.html')">Aflac</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/agoti01/index.html')">Agoti</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/baddies/index.html')">Baddies</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/bob03/index.html')">Bob</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/bobandbosip11/index.html')">Bob and Bosip</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/challenge-edd02/index.html')">Challeng-EDD</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/corruption-takeover01/index2.html')">Corruption Takeover</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/davebambi30/index2.html')">Dave & Bambi</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/goldenapple02/index.html')">Dave & Bambi Gapple</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/dokitakeover04/index.html')">Doki Doki Takeover</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/entity01/index.html')">Entity</a>
+<a class="link" href="javascript:openInNewTab('https://game.fnfhub.net/25338/')">Friday the 13th</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/funkadelix01/index.html')">Funkadelix</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/garcello02/index2.html')">Garcello</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/hank02/index.html')">Hank Accelerant</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/miku21/index.html')">Hatsune Miku</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/hecker23/index.html')">Hecker</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/herobrine01/index.html')">Herobrine</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/hex21/index.html')">Hex</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/hit-single03/index2.html')">Hit Single</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/lullaby23/index.html')">Hypno's Lullaby</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/impostor42/index7.html')">Imposter V4</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/indiecross29/index6.html')">Indie cross</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/kapi21/index.html')">Kapi</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/lobotomy03/index.html')">Lobotomy Dash</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/mami01/index.html')">Mami</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/mario-madness31/index.html')">Mario's Madness</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/matt23/index.html')">Matt</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/midfight13/index2.html')">Mid Fight Masses</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/mokey01/index.html')">Mokey</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/nonsense21/index.html')">Nonsense</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/snoopy05/index.html')">Peanuts</a>
+<a class="link" href="javascript:openInNewTab('https://gamaverse.com/c/f/g/fnf-qt-mod-w-cheatbot-friday-night-funkin/index.html')">QT</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/shaggy21/index.html')">Shaggy</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/shaggyxmatt/index.html')">Shaggy X Matt</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/sky04/index3.html')">Sky</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/tabiv203/index.html')">Tabi V2</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/trepidation01/index.html')">Trepidation</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/tricky23/index.html')">Tricky</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/whitty21/index.html')">Whitty</a>
+<a class="link" href="javascript:openInNewTab('https://w8.snokido.com/games/html5/friday-night-funkin/skibidi02/index2.html')">best mod ever</a>
+    <script>
+      loadTheme();
+    </script>
+  </body>
+</html>

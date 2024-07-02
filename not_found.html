@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #262626, #000000); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun and rounded font */
+            color: white;
+        }
+        .error-message {
+            background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); /* White shadow */
+            animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-message">
+        <h1>Um what the sigma?</h1>
+        <p>You're not supposed to be here, this is an error page.</p>
+    </div>
+</body>
+</html>

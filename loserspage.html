@@ -1,0 +1,369 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style">
+    <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+		<style>
+			body { margin: 0; }
+		</style>
+			<meta
+	 name="theme-color"
+	 content="#8cb8ff">
+
+   <form id="password-form">
+        <label for="password-input"></label>
+        <input type="password" id="password-input" name="password" required>
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+ <div id="Text"> <p>You must type correctly to continue</p> </div>
+
+    <script>
+        const passwordInput = document.getElementById("password-input");
+        const submitButton = document.getElementById("submit-button");
+        const correctPassword = "thanks";
+        const textdiv = document.getElementById("Text");
+
+        // Check if password is already saved in localStorage
+        const savedPassword = localStorage.getItem("savedPassword");
+        if (savedPassword === correctPassword) {
+            document.body.style.overflow = "auto"; // Allow scrolling
+            passwordInput.style.display = "none"; // Hide input box
+            submitButton.style.display = "none"; // Hide submit button
+            textdiv.style.display = "none";
+            
+        }
+
+        document.getElementById("password-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            if (passwordInput.value === correctPassword) {
+                // If the entered password matches, allow scrolling
+                document.body.style.overflow = "auto";
+                passwordInput.style.display = "none"; // Hide input box
+                submitButton.style.display = "none"; // Hide submit button
+                textdiv.style.display = "none";
+                alert("Thanks for purchasing!")
+                // Save password to localStorage
+                localStorage.setItem("savedPassword", correctPassword);
+            } else {
+                // Otherwise, display an error message or take other actions
+                alert("Incorrect password. Please try again.");
+            }
+        });
+    </script>
+
+	</head>
+	
+<script>
+setTimeout(function (){
+  
+  // Something you want delayed.
+            
+}, 1000);
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+</script>
+
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <div style="text-align: center;">
+         <img width="400" src="https://i.ibb.co/GRWjNx8/dddsd.png">
+      </div>
+      
+
+      
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div style="text-align: center;"><div class="elfsight-app-ff7d4401-ee9c-40b6-a9da-7162eb63bec4" data-elfsight-app-lazy></div></div>
+
+      <f>Thanks for buying!</f>
+      <p>Thanks to 3kh0, Foxmoss, wr_nd and skysthelimit.dev</p>
+      <p>If a site says (BAD) that means the site owner is using a bad ad service which causes weird popups to appear. These usually get fixed within a week or so.</p>
+        
+            <style type="text/css">
+            div{}
+            img{
+                 margin: 0 auto;
+	         display:block;
+         	}
+	 iframe{	
+		margin: 0 auto;
+		display:block;
+		}
+		
+		</style>
+  
+  <style type="text/css">/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+   
+   @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Varela+Round&display=swap');
+   
+#c {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+:root {
+    --bg-image: url('https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+}
+
+.data-elfsight-app-lazy {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  }
+
+
+.elfsight-app-ff7d4401-ee9c-40b6-a9da-7162eb63bec4 {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  }
+
+.card {
+    margin: auto;
+    padding: 1rem;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: gray;
+    border-radius: 10px;
+}
+ 
+.bg-blur {
+    overflow: hidden;
+    background-color: transparent;
+}
+ 
+.bg-blur::before {
+    content: '';
+    background-image: var(--bg-image);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+body {
+  color: white;
+  font-family: Verdana;
+    margin: 0;
+    background-color: #343a40;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, rgba(50, 168, 82, 1) 0%, rgba(23,23,23,1) 57%););
+    overflow: hidden;
+}
+
+p {
+  display: block;
+  font-size: 20px;
+  font-family: Varela Round;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+button {
+    display: block;
+  width: 400px;
+  height: 200px;
+  font-size: 40px;
+  font-family: Bangers;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: #121212;
+  color: white;
+  border: 40px;
+  border-color: #FFFFFF;
+  box-shadow: 2px 2px 15px #000000;
+  text-shadow: #FFFFFF 1px 1px 20px;
+    background-color: #343a40;
+    background-image: linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #343a40);
+}
+
+b {
+    display: block;
+  width: 400px;
+  height: 200px;
+  font-size: 40px;
+  font-family: Varela Round;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: #121212;
+  color: white;
+  border: 40px;
+  border-color: #000000;
+}
+
+u {
+    display: block;
+    text-align: center;
+  width: 400;
+  height: 100px;
+  font-size: 80px;
+  font-family: Varela Round;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: #A7DEFF;
+  color: #000000;
+  border: 40px;
+  border-color: #000000;
+  border-width: 10px;
+  box-shadow: #A7DEFF 2px 2px 10px;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+f {
+    display: block;
+    text-align: center;
+  width: auto;
+  height: 50px;
+  font-size: 40px;
+  font-family: Varela Round;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: #2e2e2e;
+  color: #FFFFFF;
+  border: 40px;
+  border-color: #000000;
+  border-width: 10px;
+}
+
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-family: Varela Round;
+  border-radius: 15px;
+  background-color: #121212;
+  color: white;
+  border: 40px;
+  border-color: #000000;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+ iframe{	
+		margin: 0 auto;
+		display:block;
+		}
+		
+		div{
+		  display:block;
+		  margin-left: auto;
+		  margin-right: auto;
+		  }
+	
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+.divider {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: red;
+  margin: 5px;
+  
+    #cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        #passwordInput {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        #passwordButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+#Text {
+  display:block }
+  
+  #willshowlater {
+  display:none }
+        
+}</style>
+
+<script>
+function nahidwin() {
+    var el = document.documentElement
+    , rfs = // for newer Webkit and Firefox
+       el.requestFullScreen
+    || el.webkitRequestFullScreen
+    || el.mozRequestFullScreen
+    || el.msRequestFullScreen
+    ;
+
+    if(typeof rfs!="undefined" && rfs){
+
+        rfs.call(el);
+
+    } else if(typeof window.ActiveXObject!="undefined"){
+
+        // for Internet Explorer
+        var wscript = new ActiveXObject("WScript.Shell");
+
+        if (wscript!=null) {
+          wscript.SendKeys("{F11}");
+        }
+    }
+alert ("Verification Happening, please wait!")}
+</script>
+      
+      
+
+<button class="btn btn-success" onclick="  window.open('https://www.bing.com/search?FORM=CHROMN&PC=U316&adlt=strict&q=pay+for+the+fucking+site+bitch'), window.open('https://www.google.com/search?q=why+do+I+hate+black+monkeys&rlz=1C1VIQF_enUS1103US1103&oq=why+do+I+hate+black+monkeys&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDc1NzVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8'), window.open('https://www.google.com/search?q=what+do+I+do+if+there+is+a+tumor+in+my+balls&rlz=1C1VIQF_enUS1103US1103&oq=what+do+I+do+if+there+is+a+tumor+in+my+balls&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzg3OGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8'), window.open('https://www.google.com/search?q=humongous+bolumptuous+black+men+twerking&rlz=1C1VIQF_enUS1103US1103&oq=humongous+bolumptuous+black+men+twerking&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTE1MTAzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8'), window.open('https://www.google.com/search?q=I+love+big+black+booty+oiled+up+men&rlz=1C1VIQF_enUS1103US1103&oq=I+love+big+black+booty+oiled+up+men&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEINTg3M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8'), window.open('https://www.youtube.com/watch?v=HPpARZ1ErUQ&pp=ygUiYmVhdGluZyB5b3Ugd2l0aCBhIGZyeWluZyBwYW4gYXNtcg%3D%3D'), window.open('https://www.youtube.com/watch?v=fSRxeJi5Z5w&pp=ygUiYmVhdGluZyB5b3Ugd2l0aCBhIGZyeWluZyBwYW4gYXNtcg%3D%3D'), window.open('https://th.bing.com/th/id/R.c33a59997c3351242e1b3c2f5605d292?rik=oIYv8oy%2bKF0Acg&pid=ImgRaw&r=0'), window.open('https://www.youtube.com/watch?v=lrbOiYrMSPk&pp=ygUKbW9tbXkgYXNtcg%3D%3D'), nahidwin()"> Verification</button>
+
+</body></html>

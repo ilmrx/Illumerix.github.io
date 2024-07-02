@@ -1,0 +1,109 @@
+<!-- HTML: Responsive Navigation Bar with Dropdown Menu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive NavBar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* CSS: styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.dropdown-item a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-item {
+        margin-left: 0;
+    }
+}
+</style>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">MyWebsite</div>
+        <ul class="navbar-menu">
+            <li class="navbar-item"><a href="#home">Home</a></li>
+            <li class="navbar-item"><a href="#services">Services</a></li>
+            <li class="navbar-item dropdown">
+                <a href="#more" class="dropdown-toggle">More</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="#about">About Us</a></li>
+                    <li class="dropdown-item"><a href="#contact">Contact</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+    // JavaScript: script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+    </script>
+</body>
+</html>

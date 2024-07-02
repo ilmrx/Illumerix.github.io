@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Link Generator</title>
+</head>
+<body>
+    <form id="linkForm">
+        <input type="text" id="name" placeholder="Function Name"> Function Name
+        <br>
+        <input type="text" id="bg" placeholder="Background URL"> Background Url
+        <br>
+        <input type="text" id="header" placeholder="Header Hex Code"> Header Hex Code
+        <br>
+        <input type="text" id="gradient" placeholder="Gradient Hex Code"> Gradient Hex Code
+        <br>
+        <input type="text" id="trail" placeholder="Trail Hex Code"> Trail Hex Code
+        <br>
+        <input type="text" id="logo" placeholder="Logo URL"> Logo URL
+        <br>
+        
+        <button type="button" onclick="generateLink()">Generate Code</button>
+
+        <div id="output"></div>
+    </form>
+
+    <script>
+        function generateLink() {
+            const name = document.getElementById("name").value;
+            const bg = document.getElementById("bg").value;
+            const header = document.getElementById("header").value;
+            const gradient = document.getElementById("gradient").value;
+            const trail = document.getElementById("trail").value;
+            const logo = document.getElementById("logo").value;
+
+            const rawHtml = `function ${name}() {
+            saveTheme('${name}');
+        document.body.style.backgroundImage = "url('${bg}')";
+        
+        var vTags = document.getElementsByTagName("v");
+        
+        for (var i = 0; i < vTags.length; i++) {
+            vTags[i].style.backgroundColor = "${header}";
+            vTags[i].style.boxShadow = "0 0 10px ${header}";
+        }
+
+        var aTags = document.getElementsByTagName("a");
+        
+        for (var j = 0; j < aTags.length; j++) {
+            aTags[j].style.backgroundImage = "linear-gradient(to right top, ${gradient}, #121212, ${gradient})";
+        }
+        
+        var trailElements = document.querySelectorAll(".trail");
+        
+        trailElements.forEach(function(element) {
+            element.style.backgroundColor = "${trail}";
+        });
+
+        document.getElementById("logo").src = "${logo}";
+    }
+    `;
+            document.getElementById("output").innerText = rawHtml;
+            
+            // Display the generated HTML code in an alert
+            alert("Generated HTML code:\n\n" + rawHtml);
+            
+            // Copy the generated HTML code to the clipboard
+            copyToClipboard(rawHtml);
+            
+            // Alert the viewer that the HTML code has been copied
+            alert("HTML code copied to clipboard!");
+        }
+        
+        function openInNewTab(url) {
+            window.open(url, '_blank');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    console.log('Text copied to clipboard');
+                })
+                .catch((err) => {
+                    console.error('Failed to copy text: ', err);
+                });
+        }
+    </script>
+</body>
+</html>

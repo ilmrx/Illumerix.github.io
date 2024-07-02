@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundFlash 0.1s infinite;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .banned-message {
+            font-size: 10em;
+            font-weight: bold;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            animation: glitch 0.02s infinite alternate, flash 0.3s infinite, shake 0.05s infinite, textShadowFlicker 0.1s infinite;
+        }
+
+        .footer-message {
+            font-size: 2em;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: bold;
+            animation: fadeIn 4s ease-in forwards, textFlicker 3s infinite;
+        }
+
+        .overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://ilmrx.neocities.org/images/misc/Jungler.webp');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            pointer-events: none;
+            animation: colorShift 3s infinite;
+            filter: contrast(200%) grayscale(100%) hue-rotate(180deg) invert(100%) sepia(80%);
+        }
+
+        @keyframes jumpscare {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(2) rotate(-20deg); }
+            50% { transform: scale(0.4) rotate(20deg); }
+            75% { transform: scale(2.5) rotate(-10deg); }
+            100% { transform: scale(1) rotate(0deg); display: block; }
+        }
+
+        @keyframes flicker {
+            0%, 19.9%, 21.9%, 23.9%, 25%, 54.9%, 56.9%, 58.9%, 60%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55%, 57%, 59% { opacity: 0; }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0px, 0px) skew(0deg, 0deg) rotate(0deg); }
+            10% { transform: translate(10px, -10px) skew(10deg, -10deg) rotate(10deg); }
+            20% { transform: translate(-10px, 10px) skew(-10deg, 10deg) rotate(-10deg); }
+            30% { transform: translate(15px, 15px) skew(15deg, -10deg) rotate(15deg); }
+            40% { transform: translate(-15px, -15px) skew(-15deg, 10deg) rotate(-15deg); }
+            50% { transform: translate(20px, 20px) skew(20deg, -15deg) rotate(20deg); }
+            60% { transform: translate(-20px, -20px) skew(-20deg, 15deg) rotate(-20deg); }
+            70% { transform: translate(25px, 25px) skew(25deg, -20deg) rotate(25deg); }
+            80% { transform: translate(-25px, -25px) skew(-25deg, 20deg) rotate(-25deg); }
+            90% { transform: translate(30px, 30px) skew(30deg, -25deg) rotate(30deg); }
+            100% { transform: translate(0px, 0px) skew(0deg, 0deg) rotate(0deg); }
+        }
+
+        @keyframes flash {
+            0%, 50%, 100% { color: #ff0000; }
+            25%, 75% { color: #000; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-20px); }
+            20%, 40%, 60%, 80% { transform: translateX(20px); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes textFlicker {
+            0%, 19.9%, 21.9%, 23.9%, 25%, 54.9%, 56.9%, 58.9%, 60%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55%, 57%, 59% { opacity: 0; }
+        }
+
+        @keyframes colorShift {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes textShadowFlicker {
+            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
+            50% { text-shadow: 0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 120px #ff0000; }
+            100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
+        }
+
+        @keyframes backgroundFlash {
+            0%, 50%, 100% { background-color: #000; }
+            25%, 75% { background-color: #ff0000; }
+        }
+
+        .scream {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="showJumpScare()">
+    <!-- Your HTML content here -->
+    <audio id="ambientSound" src="https://od.lk/s/MTlfNTU4OTg2OTNf/youtube_yjQg5xS5tyQ_audio.mp3" preload="auto" autoplay loop volume="0.6"></audio>
+    <audio id="screamSound" src="https://od.lk/s/MTlfNTYwMjA1MDlf/youtube_Lk0T2GsvPLM_audio.mp3" preload="auto"></audio>
+    <div class="overlay" id="overlay"></div>
+    <div class="container">
+        <h1 class="banned-message">YOU HAVE BEEN BANNED</h1>
+        <p class="footer-message">I wanted to ban you, reset cookies won't do shit.</p>
+    </div>
+
+    <script>
+        function showJumpScare() {
+            var overlay = document.getElementById('overlay');
+            var screamSound = document.getElementById('screamSound');
+            overlay.style.animation = 'jumpscare 0.8s ease-in-out forwards, flicker 0.05s infinite, colorShift 3s infinite';
+            screamSound.play(); // Autoplay the scream sound
+            setTimeout(function() {
+                overlay.style.animation = 'colorShift 3s infinite';
+            }, 1500);  // Longer duration for the jumpscare effect
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest YouTube Video</title>
+</head>
+<body>
+
+<div id="latest-video">Loading latest video...</div>
+
+<script>
+    const API_KEY = 'AIzaSyAv0sxeIxAMl-JGcvOI2kauzj3OOHpSm3U';
+    const CHANNEL_ID = 'UCMNR2N7Vk_scg9DOc485uZA';
+
+    async function fetchLatestVideo() {
+        try {
+            const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            const data = await response.json();
+            console.log('API response:', data);  // Debugging line
+            if (data.items && data.items.length > 0) {
+                const videoId = data.items[0].id.videoId;
+                const videoTitle = data.items[0].snippet.title;
+                displayVideo(videoId, videoTitle);
+            } else {
+                document.getElementById('latest-video').innerText = 'No videos found.';
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);  // Debugging line
+            document.getElementById('latest-video').innerText = 'Failed to load video.';
+        }
+    }
+
+    function displayVideo(videoId, videoTitle) {
+        const videoFrame = `
+            <h2>${videoTitle}</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+        document.getElementById('latest-video').innerHTML = videoFrame;
+    }
+
+    fetchLatestVideo();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Book</title>
+</head>
+<body>
+  <h2>Signature Book</h2>
+  
+  <form id="signatureForm">
+    <label for="signatureName">Your Name:</label>
+    <input type="text" id="signatureName" name="signatureName" required>
+    <button type="submit">Sign</button>
+  </form>
+
+  <div id="signatureList">
+    <h3>Signatures:</h3>
+    <ul id="signatures">
+      <!-- Signatures will be dynamically added here -->
+    </ul>
+  </div>
+
+  <script>
+    // Function to handle form submission
+    document.getElementById('signatureForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get signature name from input
+      const signatureName = document.getElementById('signatureName').value;
+
+      // Create new signature object
+      const newSignature = {
+        name: signatureName,
+        timestamp: new Date().toISOString() // Optional: Add timestamp
+      };
+
+      // Retrieve existing signatures or initialize empty array
+      let signatures = localStorage.getItem('signatures');
+      signatures = signatures ? JSON.parse(signatures) : [];
+
+      // Add new signature to array
+      signatures.push(newSignature);
+
+      // Save updated signatures back to localStorage
+      localStorage.setItem('signatures', JSON.stringify(signatures));
+
+      // Clear input field
+      document.getElementById('signatureName').value = '';
+
+      // Refresh signature list
+      displaySignatures();
+    });
+
+    // Function to display signatures
+    function displaySignatures() {
+      let signatures = localStorage.getItem('signatures');
+      signatures = signatures ? JSON.parse(signatures) : [];
+
+      const signatureList = document.getElementById('signatures');
+      signatureList.innerHTML = '';
+
+      // Loop through signatures and add to list
+      signatures.forEach(signature => {
+        const li = document.createElement('li');
+        li.textContent = signature.name;
+        signatureList.appendChild(li);
+      });
+    }
+
+    // Initial display of signatures when page loads
+    displaySignatures();
+  </script>
+</body>
+</html>
